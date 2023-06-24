@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import Todo from './components/Todo';
+import Heading from './components/Heading';
+import { useState, useEffect } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default function App() {
 
-export default App;
+	let [data, setData] = useState([{
+		"userId": 1,
+		"id": 1,
+		"title": "Title 1",
+		"completed": false
+	}]);
+
+	const fetchData = () => {
+		try {
+			fetch('https://jsonplaceholder.typicode.com/todos/')
+			.then(response => response.json())
+			.then(json => setData(json));
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	useEffect(() => {
+		fetchData();
+		console.log(data);
+	}, []);
+
+	return (
+		<div>
+			<Heading text="Hello"/>
+			{data.slice(0,5).map((todo) => (
+				<Todo info={todo} />
+			))}
+			<h1>Non-component H1</h1>
+		</div>
+	)
+};

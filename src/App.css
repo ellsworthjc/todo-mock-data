@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+/* https://colorhunt.co/palette/222831393e4600adb5eeeeee */
+:root {
+	--dark1: #222831;
+	--dark2: #393E46;
+	--blue: #00ADB5;
+	--light1: #EEEEEE;
+	--light2: #FFFFFF;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	font-family: Helvetica;
+	background: var(--dark1);
+	color: var(--light2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+	color: var(--light1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+hr {
+	width: 35px;
+	height: 2px;
+	background-color: var(--blue);
+	border: none;
 }
 
-.App-link {
-  color: #61dafb;
+div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem 3rem;
+	background-color: var(--light1);
+	border-radius: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div h1 {
+	color: var(--dark1);
+}
+
+div h3 {
+	color: var(--dark2);
 }
