@@ -5,6 +5,7 @@ export default function Todo(props) {
     return (
         <>
             <h3 key={todo.id}>{todo.title} {todo.completed == true ? "✅" : "❌"}</h3>
+			<p className="text-green-600">Tailwind Success</p>
         </>
     )
 }

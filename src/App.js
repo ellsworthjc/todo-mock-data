@@ -1,7 +1,8 @@
+import { useState, useEffect } from 'react';
 import './App.css';
 import Todo from './components/Todo';
 import Heading from './components/Heading';
-import { useState, useEffect } from 'react';
+import TodoList from './components/TodoList';
 
 export default function App() {
 
@@ -29,6 +30,7 @@ export default function App() {
 
 	return (
 		<div>
+			{/* <TodoList /> */}
 			<Heading text="Hello"/>
 			{data.slice(0,5).map((todo) => (
 				<Todo info={todo} />
